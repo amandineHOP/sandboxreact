@@ -23,10 +23,3 @@ jobs:
 
       - name: Build
         run: npm run build
-
-      - name: Deploy to Local Server
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          publish_dir: ./build
-          publish_branch: gh-pages
-          enable_jekyll: false
