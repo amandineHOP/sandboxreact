@@ -23,3 +23,8 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Run Local Server
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          args: -d build -p 8000
