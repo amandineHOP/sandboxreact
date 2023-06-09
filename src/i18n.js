@@ -20,23 +20,22 @@ i18n
             en: {
                 translation: {
                     description: {
-                        part1: 'Welcome in my first appli with React for the Chantier IA, by Amandine, ChatGPT and Copilot! :-)\n',
-                        part2: 'We are the ',
-                        part3: 'You can see in the console all the\n' +
-                            '                             asteroids which are near the Earth today. For now, it\'s quite hard to decrypt but we are trying to make better\n' +
-                            '                             as soon as possible. Be patient ;-)'
+                        part1: 'Welcome in my first appli with React for the Chantier IA, by Amandine, ChatGPT and Copilot!\n',
+                        part2: 'Clicking on the button, you will see in the console all the asteroids which are near the Earth today.',
+                        part3: 'For now, it\'s quite hard to decrypt but we are trying to make better as soon as possible. Be patient ;-)',
+                        part4: 'Discover the NASA website'
                     }
                 }
             },
             fr: {
                 translation: {
                     description: {
-                        part1: 'Bienvenue dans ma premiere appli React pour le Chantier IA, signée Amandine, ChatGPT et Copilot! :-)',
-                        part2: 'Nous sommes le ',
-                        part3: 'Vous pouvez voir dans la console de cette fenetre l\'ensemble des\n' +
-                            '                             asteroides qui sont proches de la Terre aujourd\'hui. Pour l \'instant c\'est pas facile à\n' +
-                            '                             déchiffrer mais on va tenter de faire un joli tableau tout beau tout propre dans la fenetre du\n' +
-                            '                             navigateur. Un peu de patience ;-)'
+                        part1: 'Bienvenue dans ma premiere appli React pour le Chantier IA, signée Amandine, ChatGPT et Copilot!',
+                        part2: 'En cliquant sur le bouton ci-dessous, vous verrez dans la console de cette fenetre l\'ensemble des\n' +
+                            '                             asteroides qui sont proches de la Terre aujourd\'hui.',
+                        part3: 'Pour l \'instant c\'est pas facile à déchiffrer mais on va tenter de faire un joli tableau tout beau tout propre dans la fenetre du\n' +
+                            '                             navigateur. Un peu de patience ;-)',
+                        part4: 'Découvrir le site de la NASA'
                     }
                 }
             }
