@@ -16,17 +16,18 @@ function App() {
     const [aujourdhui, setAujourdhui] = useState('');
     const [hier, setHier] = useState('');
 
+    //definition de la date d'aujourd'hui et d'hier
     useEffect(() => {
         const currentDate = new Date(); // Obtient la date d'aujourd'hui
         const previousDate = new Date();
         previousDate.setDate(currentDate.getDate() - 1); // Obtient la date d'hier
 
-        //definir aujourd hui et hier et les formatter en aaaa/mm/jj pour les passer en parametre de l url
+        //formatage de la date pour l'api de la Nasa
         setAujourdhui(currentDate.toISOString().split('T')[0]);
         setHier(previousDate.toISOString().split('T')[0]);
 
             }, []);
-
+        //appel de l api de la Nasa et affichage des donnees dans la console
         useEffect(() => {
             const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${encodeURIComponent(hier)}&end_date=${encodeURIComponent(aujourdhui)}&api_key=DEMO_KEY`;
 
@@ -40,6 +41,7 @@ function App() {
                 });
         }, [aujourdhui, hier]);
 
+        //affichage de la page d'acceuil avec la date du jour et le choix de la langue
         return (
             <div className="App">
                 <header className="App-header">
@@ -69,7 +71,7 @@ function App() {
                             Vous pouvez voir dans la console de cette fenetre l'ensemble des
                             asteroides qui sont proches de la Terre aujourd'hui. Pour l 'instant c'est pas facile à
                             déchiffrer mais on va tenter de faire un joli tableau tout beau tout propre dans la fenetre du
-                            navigateur. Un peu de patience !
+                            navigateur. Un peu de patience ;-)
                         </Trans>
                     </p>
                     <a
