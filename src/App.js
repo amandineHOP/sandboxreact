@@ -57,12 +57,7 @@ function App() {
                         Asteroids
                     </button>
                 </div>
-            <ul>
-                {data.map((item, index) => (
-                    <li key={index}>{item}</li>
-                ))}
-            </ul>
-                <p>
+                 <p>
                     <Trans i18nKey="description.part3">
                         Pour l 'instant c'est pas facile à déchiffrer mais on va tenter de faire un joli tableau tout
                         beau tout propre dans la fenetre du
