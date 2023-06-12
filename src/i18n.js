@@ -22,8 +22,11 @@ i18n
                     description: {
                         part1: 'Welcome in my first appli with React for the Chantier IA, by Amandine, ChatGPT and Copilot!\n',
                         part2: 'Clicking on the button, you will see in the console all the asteroids which are near the Earth today.',
-                        part3: 'For now, it\'s quite hard to decrypt but we are trying to make better as soon as possible. Be patient ;-)',
-                        part4: 'Discover the NASA website'
+                        part4: 'Discover the NASA website',
+                        part5: 'Name',
+                        part6: 'Potentially hazardous',
+                        part7: 'Estimated maximal diameter',
+                        part8: 'Display asteroids'
                     }
                 }
             },
@@ -33,9 +36,11 @@ i18n
                         part1: 'Bienvenue dans ma premiere appli React pour le Chantier IA, signée Amandine, ChatGPT et Copilot!',
                         part2: 'En cliquant sur le bouton ci-dessous, vous verrez dans la console de cette fenetre l\'ensemble des\n' +
                             '                             asteroides qui sont proches de la Terre aujourd\'hui.',
-                        part3: 'Pour l \'instant c\'est pas facile à déchiffrer mais on va tenter de faire un joli tableau tout beau tout propre dans la fenetre du\n' +
-                            '                             navigateur. Un peu de patience ;-)',
-                        part4: 'Découvrir le site de la NASA'
+                        part4: 'Découvrir le site de la NASA',
+                        part5: 'Nom',
+                        part6: 'Potentiellement dangereuse',
+                        part7: 'Diamètre maximal estimé',
+                        part8: 'Afficher les asteroides'
                     }
                 }
             }
