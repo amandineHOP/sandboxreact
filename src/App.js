@@ -2,9 +2,12 @@ import './App.css';
 
 import {useTranslation, Trans} from 'react-i18next';
 import {useEffect, useState} from 'react';
+import {from} from 'rxjs';
+import {map} from 'rxjs/operators';
 import {Header} from './Header';
-import axios from 'axios';
 import {Footer} from "./Footer";
+import axios from 'axios';
+
 
 function App() {
 
@@ -28,21 +31,25 @@ function App() {
 
     //appel de l'api de la Nasa avec les dates d'aujourd'hui et d'hier en paramètre
     const appelAPI = () => {
-        const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${encodeURIComponent(hier)}&end_date=${encodeURIComponent(aujourdhui)}&api_key=DEMO_KEY`;
+        const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${encodeURIComponent(
+            hier
+        )}&end_date=${encodeURIComponent(aujourdhui)}&api_key=DEMO_KEY`;
 
-        axios
-            .get(url)
-            .then(response => {
-                setData(response.data);
-                console.log(response.data);
-            })
-            .catch(error => {
+        from(axios.get(url))
+            .pipe(
+                map((response) => response.data)
+            )
+            .subscribe((responseData) => {
+                setData(responseData);
+                console.log(responseData);
+            }, (error) => {
                 console.error(error);
             });
     };
+
     return (
         <div className="App">
-            <Header className="App-header"/>
+            <Header/>
                 <p style={{fontSize: '30px', color: 'blue'}}>{aujourdhui}</p>
                 <p>
                     <Trans i18nKey="description.part2">
