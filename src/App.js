@@ -2,12 +2,9 @@ import './App.css';
 
 import {useTranslation, Trans} from 'react-i18next';
 import {useEffect, useState} from 'react';
+import {Header} from './Header';
 import axios from 'axios';
-
-const lngs = {
-    en: {nativeName: 'English'},
-    fr: {nativeName: 'Francais'}
-};
+import {Footer} from "./Footer";
 
 function App() {
 
@@ -15,6 +12,7 @@ function App() {
 
     const [aujourdhui, setAujourdhui] = useState('');
     const [hier, setHier] = useState('');
+    const [data, setData] = useState([]);
 
     //definition de la date d'aujourd'hui et d'hier
     useEffect(() => {
@@ -35,6 +33,7 @@ function App() {
         axios
             .get(url)
             .then(response => {
+                setData(response.data);
                 console.log(response.data);
             })
             .catch(error => {
@@ -43,29 +42,7 @@ function App() {
     };
     return (
         <div className="App">
-            <header className="App-header">
-                <div>
-                    <img src={"https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg"}
-                         alt="Nasa"/>
-                    <div>
-                    </div>
-                    {Object.keys(lngs).map((lng) => (
-                        <button key={lng} style={{
-                            fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal',
-                            fontSize: '20px',
-                            padding: '10px 20px',
-                            marginTop: '20px'
-                        }}
-                                type="submit" onClick={() => i18n.changeLanguage(lng)}>
-                            {lngs[lng].nativeName}
-                        </button>
-                    ))}
-                </div>
-                <p>
-                    <Trans i18nKey="description.part1">
-                        Ma premiere appli React pour le Chantier IA signée Amandine, ChatGPT et Copilot!
-                    </Trans>
-                </p>
+            <Header className="App-header"/>
                 <p style={{fontSize: '30px', color: 'blue'}}>{aujourdhui}</p>
                 <p>
                     <Trans i18nKey="description.part2">
@@ -80,6 +57,11 @@ function App() {
                         Asteroids
                     </button>
                 </div>
+            <ul>
+                {data.map((item, index) => (
+                    <li key={index}>{item}</li>
+                ))}
+            </ul>
                 <p>
                     <Trans i18nKey="description.part3">
                         Pour l 'instant c'est pas facile à déchiffrer mais on va tenter de faire un joli tableau tout
@@ -87,17 +69,7 @@ function App() {
                         navigateur. Un peu de patience ;-)
                     </Trans>
                 </p>
-                <a
-                    className="App-link"
-                    href="https://www.nasa.gov/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <Trans i18nKey="description.part4">
-                        Découvrir le site de la NASA
-                    </Trans>
-                </a>
-            </header>
+            <Footer/>
         </div>
     );
 }
